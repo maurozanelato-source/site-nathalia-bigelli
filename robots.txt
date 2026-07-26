@@ -1,6 +1,4 @@
 # robots.txt — Dra. Nathalia Bigelli | Estomatologista em Londrina
-# CANONICAL: atualize o domínio abaixo quando publicar o site
-
 User-agent: *
 Allow: /
 
@@ -23,4 +21,4 @@ Allow: /
 User-agent: anthropic-ai
 Allow: /
 
-Sitemap: https://www.dranathaliabigelli.com.br/sitemap.xml
+Sitemap: https://dra-nathalia-bigelli.vercel.app/sitemap.xml
