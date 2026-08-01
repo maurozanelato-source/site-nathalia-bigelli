@@ -22,3 +22,6 @@ User-agent: anthropic-ai
 Allow: /
 
 Sitemap: https://www.dranathaliabigelli.com.br/sitemap.xml
+
+# Fatos essenciais para LLMs / GEO
+# https://www.dranathaliabigelli.com.br/llms.txt
