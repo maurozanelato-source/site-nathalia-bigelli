@@ -843,21 +843,37 @@
   </div>
 </footer>
 
-<!-- ============ BOTÃO FLUTUANTE WHATSAPP ============ -->
-<!-- 
-  CONTATO: caso o número de WhatsApp mude, atualize os 3 pontos abaixo:
-  1) todos os links "https://wa.me/5543991707611..." desta página
-  2) o texto exibido no rodapé
-  3) este botão flutuante
--->
-<a href="https://wa.me/5543991707611?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta%20com%20a%20Dra.%20Nathalia%20Bigelli."
-   target="_blank" rel="noopener noreferrer"
-   aria-label="Agendar consulta pelo WhatsApp"
-   class="fixed bottom-5 right-5 sm:bottom-7 sm:right-7 z-50 w-14 h-14 sm:w-16 sm:h-16 btn-whatsapp text-white rounded-full shadow-xl shadow-black/20 flex items-center justify-center transition-transform hover:scale-105">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-7 h-7 sm:w-8 sm:h-8" aria-hidden="true">
-    <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.48 1.32 5l-1.41 5.15 5.29-1.38a9.9 9.9 0 0 0 4.71 1.2h.01c5.46 0 9.9-4.45 9.9-9.91S17.5 2 12.04 2Zm5.83 14.13c-.25.7-1.44 1.35-1.98 1.42-.5.07-1.13.1-1.83-.11-.42-.13-.96-.31-1.66-.6-2.93-1.27-4.84-4.24-4.99-4.44-.15-.2-1.2-1.59-1.2-3.03 0-1.44.76-2.15 1.03-2.44.26-.29.57-.36.76-.36h.55c.18 0 .42-.07.65.5.25.6.85 2.07.92 2.22.07.15.12.32.02.52-.1.2-.15.33-.3.5-.15.18-.31.4-.44.53-.15.15-.3.31-.13.61.18.3.79 1.31 1.7 2.12 1.17 1.04 2.15 1.37 2.45 1.52.3.15.47.13.65-.08.18-.2.75-.87.95-1.17.2-.3.4-.25.66-.15.27.1 1.72.81 2.02.96.3.15.5.22.57.35.08.13.08.72-.17 1.42Z"/>
-  </svg>
-</a>
+<!-- ============ WHATSAPP FLUTUANTE (escolha de público) ============ -->
+<div id="wa-widget" class="wa-widget fixed bottom-5 right-5 sm:bottom-7 sm:right-7 z-50">
+  <div id="wa-panel" class="wa-panel hidden" role="dialog" aria-label="Como podemos ajudar no WhatsApp" aria-hidden="true">
+    <p class="wa-panel__title">Falar no WhatsApp</p>
+    <a class="wa-panel__option" href="https://wa.me/5543991707611?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta%20com%20a%20Dra.%20Nathalia%20Bigelli." target="_blank" rel="noopener noreferrer">
+      <span class="wa-panel__label">Agendar consulta</span>
+      <span class="wa-panel__hint">Pacientes</span>
+    </a>
+    <a class="wa-panel__option" href="https://wa.me/5543991707611?text=Ol%C3%A1%2C%20Dra.%20Nathalia!%20Sou%20CD%20e%20quero%20garantir%20informa%C3%A7%C3%B5es%20sobre%20a%20pr%C3%B3xima%20turma%20do%20Curso%20de%20Aperfei%C3%A7oamento%20em%20Cirurgia%20Oral%20Menor." target="_blank" rel="noopener noreferrer">
+      <span class="wa-panel__label">Curso de Cirurgia Oral Menor</span>
+      <span class="wa-panel__hint">Cirurgiões-dentistas</span>
+    </a>
+    <a class="wa-panel__option" href="https://wa.me/5543991707611?text=Ol%C3%A1%2C%20Dra.%20Nathalia!%20Sou%20CD%20e%20tenho%20interesse%20em%20mentoria%20em%20cirurgia%20oral%20menor%20e%20estomatologia." target="_blank" rel="noopener noreferrer">
+      <span class="wa-panel__label">Mentoria clínica</span>
+      <span class="wa-panel__hint">Cirurgiões-dentistas</span>
+    </a>
+    <a class="wa-panel__option" href="https://wa.me/5543991707611?text=Ol%C3%A1!%20Sou%20profissional%20de%20sa%C3%BAde%20e%20gostaria%20de%20encaminhar%20um%20paciente%20para%20a%20Dra.%20Nathalia%20Bigelli." target="_blank" rel="noopener noreferrer">
+      <span class="wa-panel__label">Encaminhar paciente</span>
+      <span class="wa-panel__hint">Dentistas e médicos</span>
+    </a>
+  </div>
+
+  <button type="button" id="wa-toggle" class="wa-toggle btn-whatsapp text-white rounded-full shadow-xl shadow-black/20 flex items-center justify-center transition-transform hover:scale-105" aria-expanded="false" aria-controls="wa-panel" aria-label="Abrir opções do WhatsApp">
+    <svg id="wa-icon-open" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-7 h-7 sm:w-8 sm:h-8" aria-hidden="true">
+      <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.48 1.32 5l-1.41 5.15 5.29-1.38a9.9 9.9 0 0 0 4.71 1.2h.01c5.46 0 9.9-4.45 9.9-9.91S17.5 2 12.04 2Zm5.83 14.13c-.25.7-1.44 1.35-1.98 1.42-.5.07-1.13.1-1.83-.11-.42-.13-.96-.31-1.66-.6-2.93-1.27-4.84-4.24-4.99-4.44-.15-.2-1.2-1.59-1.2-3.03 0-1.44.76-2.15 1.03-2.44.26-.29.57-.36.76-.36h.55c.18 0 .42-.07.65.5.25.6.85 2.07.92 2.22.07.15.12.32.02.52-.1.2-.15.33-.3.5-.15.18-.31.4-.44.53-.15.15-.3.31-.13.61.18.3.79 1.31 1.7 2.12 1.17 1.04 2.15 1.37 2.45 1.52.3.15.47.13.65-.08.18-.2.75-.87.95-1.17.2-.3.4-.25.66-.15.27.1 1.72.81 2.02.96.3.15.5.22.57.35.08.13.08.72-.17 1.42Z"/>
+    </svg>
+    <svg id="wa-icon-close" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" class="w-7 h-7 sm:w-8 sm:h-8 hidden" aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+    </svg>
+  </button>
+</div>
 
 <!-- ============ JAVASCRIPT MÍNIMO (FAQ ACCORDION + ANO RODAPÉ) ============ -->
 <script>
@@ -923,6 +939,53 @@
 
       mobileMenu.querySelectorAll('.mobile-nav-link').forEach(function (link) {
         link.addEventListener('click', closeMobileMenu);
+      });
+    }
+
+    // WhatsApp flutuante: menu de público
+    var waToggle = document.getElementById('wa-toggle');
+    var waPanel = document.getElementById('wa-panel');
+    var waIconOpen = document.getElementById('wa-icon-open');
+    var waIconClose = document.getElementById('wa-icon-close');
+    var waWidget = document.getElementById('wa-widget');
+
+    function closeWaPanel() {
+      if (!waPanel || !waToggle) return;
+      waPanel.classList.add('hidden');
+      waPanel.setAttribute('aria-hidden', 'true');
+      waToggle.setAttribute('aria-expanded', 'false');
+      waToggle.setAttribute('aria-label', 'Abrir opções do WhatsApp');
+      if (waIconOpen) waIconOpen.classList.remove('hidden');
+      if (waIconClose) waIconClose.classList.add('hidden');
+    }
+
+    function openWaPanel() {
+      if (!waPanel || !waToggle) return;
+      waPanel.classList.remove('hidden');
+      waPanel.setAttribute('aria-hidden', 'false');
+      waToggle.setAttribute('aria-expanded', 'true');
+      waToggle.setAttribute('aria-label', 'Fechar opções do WhatsApp');
+      if (waIconOpen) waIconOpen.classList.add('hidden');
+      if (waIconClose) waIconClose.classList.remove('hidden');
+    }
+
+    if (waToggle && waPanel) {
+      waToggle.addEventListener('click', function () {
+        if (waPanel.classList.contains('hidden')) openWaPanel();
+        else closeWaPanel();
+      });
+
+      waPanel.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', closeWaPanel);
+      });
+
+      document.addEventListener('click', function (event) {
+        if (!waWidget || waPanel.classList.contains('hidden')) return;
+        if (!waWidget.contains(event.target)) closeWaPanel();
+      });
+
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') closeWaPanel();
       });
     }
   });

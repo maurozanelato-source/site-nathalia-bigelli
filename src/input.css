@@ -111,3 +111,72 @@
     transform: translateY(0);
   }
 }
+
+/* WhatsApp flutuante com escolha de público */
+.wa-widget {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.75rem;
+}
+
+.wa-toggle {
+  width: 3.5rem;
+  height: 3.5rem;
+  border: none;
+  cursor: pointer;
+}
+
+@media (min-width: 640px) {
+  .wa-toggle {
+    width: 4rem;
+    height: 4rem;
+  }
+}
+
+.wa-panel {
+  width: min(18.5rem, calc(100vw - 2.5rem));
+  background: #fff;
+  border: 1px solid #f2dfd0;
+  border-radius: 1rem;
+  padding: 0.75rem;
+  box-shadow: 0 12px 32px rgba(48, 28, 18, 0.16);
+}
+
+.wa-panel__title {
+  margin: 0 0 0.5rem;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #8f5f14;
+}
+
+.wa-panel__option {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0.7rem 0.75rem;
+  border-radius: 0.75rem;
+  color: #4a2c1c;
+  text-decoration: none;
+  transition: background-color 0.15s ease;
+}
+
+.wa-panel__option:hover,
+.wa-panel__option:focus-visible {
+  background-color: #faf2ec;
+}
+
+.wa-panel__label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.wa-panel__hint {
+  font-size: 0.75rem;
+  color: #94512f;
+  line-height: 1.3;
+}
