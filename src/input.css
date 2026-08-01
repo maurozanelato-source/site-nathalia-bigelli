@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: "Inter", system-ui, sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  a:focus-visible,
+  button:focus-visible {
+    outline: 3px solid #22a97a;
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .font-serif-display {
+    font-family: "Lora", serif;
+  }
+
+  .faq-icon {
+    transition: transform 0.3s ease;
+  }
+
+  .faq-open .faq-icon {
+    transform: rotate(180deg);
+  }
+
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+  }
+
+  .btn-whatsapp {
+    background-color: #25d366;
+  }
+
+  .btn-whatsapp:hover {
+    background-color: #20bd5a;
+  }
+
+  .link-whatsapp {
+    color: #25d366;
+  }
+
+  .link-whatsapp:hover {
+    color: #20bd5a;
+  }
+
+  #mobile-menu:not(.hidden) {
+    animation: slideDown 0.25s ease;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

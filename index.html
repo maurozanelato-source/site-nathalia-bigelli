@@ -248,72 +248,10 @@
 }
 </script>
 
-<!-- Tailwind CSS via CDN -->
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-  // Paleta pastel: "naval" = terracota (tons terrosos) e "mint" = areia/dourado
-  // (nomes das chaves mantidos por compatibilidade com as classes já usadas no HTML)
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          naval: {
-            50: '#faf2ec',
-            100: '#f2dfd0',
-            200: '#e6c3a8',
-            300: '#d7a47f',
-            400: '#c8865c',
-            500: '#b66b42',
-            600: '#94512f',
-            700: '#714026',
-            800: '#4a2c1c',
-            900: '#301c12'
-          },
-          mint: {
-            50: '#fdf7ec',
-            100: '#faeacc',
-            200: '#f3d69c',
-            300: '#eabd6c',
-            400: '#dfa23e',
-            500: '#c08a2e',
-            600: '#8f5f14',
-            700: '#6b4710',
-            900: '#3d2909'
-          }
-        },
-        fontFamily: {
-          sans: ['Inter', 'system-ui', 'sans-serif']
-        }
-      }
-    }
-  }
-</script>
+<link rel="stylesheet" href="assets/styles.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Lora:ital,wght@0,600;1,500&display=swap" rel="stylesheet">
-
-<style>
-  body { font-family: 'Inter', system-ui, sans-serif; }
-  .font-serif-display { font-family: 'Lora', serif; }
-  html { scroll-behavior: smooth; }
-  /* Foco visível para acessibilidade em navegação por teclado */
-  a:focus-visible, button:focus-visible {
-    outline: 3px solid #22a97a;
-    outline-offset: 2px;
-  }
-  .faq-icon { transition: transform 0.3s ease; }
-  .faq-open .faq-icon { transform: rotate(180deg); }
-  .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
-  .btn-whatsapp { background-color: #25D366; }
-  .btn-whatsapp:hover { background-color: #20BD5A; }
-  .link-whatsapp { color: #25D366; }
-  .link-whatsapp:hover { color: #20BD5A; }
-  #mobile-menu:not(.hidden) { animation: slideDown 0.25s ease; }
-  @keyframes slideDown {
-    from { opacity: 0; transform: translateY(-8px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,600;1,500&display=swap" rel="stylesheet">
 </head>
 
 <body class="bg-white text-naval-900 antialiased">
@@ -423,11 +361,14 @@
       -->
       <div class="relative w-64 sm:w-80 lg:w-96">
         <div class="absolute -inset-3 bg-mint-500/20 rounded-[2rem] blur-2xl"></div>
-        <img
-          src="assets/dra-nathalia-hero.jpg"
-          alt="Dra. Nathalia Bigelli Del Neri e Zanelato, estomatologista em Londrina/PR — especialista em Cirurgia Oral Menor e diagnóstico de lesões bucais"
-          class="relative w-full aspect-[4/5] object-cover rounded-[2rem] shadow-2xl shadow-black/40 border border-white/10"
-          width="790" height="1024" loading="eager" fetchpriority="high" decoding="async">
+        <picture>
+          <source srcset="assets/dra-nathalia-hero.webp" type="image/webp">
+          <img
+            src="assets/dra-nathalia-hero.jpg"
+            alt="Dra. Nathalia Bigelli Del Neri e Zanelato, estomatologista em Londrina/PR — especialista em Cirurgia Oral Menor e diagnóstico de lesões bucais"
+            class="relative w-full aspect-[4/5] object-cover rounded-[2rem] shadow-2xl shadow-black/40 border border-white/10"
+            width="790" height="1024" loading="eager" fetchpriority="high" decoding="async">
+        </picture>
         <div class="absolute -bottom-4 -left-4 bg-white text-naval-800 rounded-2xl shadow-xl px-4 py-3 hidden sm:block">
           <p class="text-xs font-semibold text-mint-600 uppercase tracking-wide">20 anos</p>
           <p class="text-xs text-naval-600">de atuação cirúrgica e docente</p>
